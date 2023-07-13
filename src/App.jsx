@@ -1,15 +1,15 @@
-import { Navbar } from "./components/layout/navbar/Navbar"
-import Home from "./components/pages/home/home"
-import ItemList from "./components/pages/home/itemList/itemList"
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
+import CartContextComponent from "./context/CartContext";
 
 function App() {
-
-  return <div>
-    <Home/>
-    <Navbar/>
-    <ItemList/>
-    <h1>Ferreteria Pepito</h1>
-  </div>
+  return (
+    <BrowserRouter>
+      <CartContextComponent>
+          <AppRouter />
+      </CartContextComponent>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
